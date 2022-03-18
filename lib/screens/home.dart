@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:m2/components/carousel/index.dart';
+import 'package:m2/components/drawer.dart';
 import 'package:m2/components/exercices/exercice_1.dart';
 import 'package:m2/components/exercices/exercice_2.dart';
 
@@ -14,15 +16,24 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int index = 0;
 
+  List<Widget> list = [
+    const Exercice1(),
+    const Exercice2(),
+    const CarouselImages()
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Flutter'),
       ),
-      body: Container(),
+      drawer: const CustomDrawer(),
+      body: list[index],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         onTap: (int i) {
           setState(() {
             index = i;

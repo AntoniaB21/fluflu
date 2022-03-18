@@ -7,78 +7,66 @@ class Exercice2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Container(
-          color: Colors.blue,
-          height: 100,
-        ),
-        SizedBox(
-          height: 800,
-          width: 450,
-          child: Row(
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        vertical: 15
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    color: Colors.blue,
-                    height: 100,
-                    width: 100,
-                  ),
-                ],
-              ),
-              const SizedBox(
+              Container(
+                color: Colors.blue,
+                height: 50,
                 width: 50,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    color: Colors.blue,
-                    height: 100,
-                    width: 100,
-                  ),
-                  Container(
-                    color: Colors.blue,
-                    height: 100,
-                    width: 100,
-                  ),
-                ],
-              ),
-              const SizedBox(
-                width: 50,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    color: Colors.blue,
-                    height: 100,
-                    width: 100,
-                  ),
-                  Container(
-                    color: Colors.blue,
-                    height: 100,
-                    width: 100,
-                  ),
-                  Container(
-                    color: Colors.blue,
-                    height: 100,
-                    width: 100,
-                  ),
-                ],
               ),
             ],
           ),
-        ),
-        Container(
-          color: Colors.blue,
-          height: 100,
-        ),
-      ],
+          const SizedBox(
+            width: 50,
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Container(
+                color: Colors.blue,
+                height: 50,
+                width: 50,
+              ),
+              Container(
+                color: Colors.blue,
+                height: 50,
+                width: 50,
+              ),
+            ],
+          ),
+          const SizedBox(
+            width: 50,
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                color: Colors.blue,
+                height: 50,
+                width: 50,
+              ),
+              Container(
+                color: Colors.blue,
+                height: 50,
+                width: 50,
+              ),
+              Container(
+                color: Colors.blue,
+                height: 50,
+                width: 50,
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

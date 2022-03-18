@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Exercie1 extends StatelessWidget {
-  const Exercie1({
+class Exercice1 extends StatelessWidget {
+  const Exercice1({
     Key? key,
   }) : super(key: key);
 
@@ -14,37 +14,37 @@ class Exercie1 extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          height: 250,
-          width: 250,
+          height: 50,
+          width: 50,
           color: Colors.red,
         ),
         const SizedBox(
-          width: 10,
+          width: 5,
         ),
         Container(
-          height: 250,
-          width: 250,
+          height: 50,
+          width: 50,
           color: Colors.green,
         ),
       ],
     ),
     const SizedBox(
-      height: 10,
+      height: 5,
     ),
     Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          height: 250,
-          width: 250,
+          height: 50,
+          width: 50,
           color: Colors.blue,
         ),
         const SizedBox(
-          width: 10,
+          width: 5,
         ),
         Container(
-          height: 250,
-          width: 250,
+          height: 50,
+          width: 50,
           color: Colors.yellow,
         ),
       ],
