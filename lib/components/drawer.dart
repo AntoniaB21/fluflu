@@ -55,7 +55,7 @@ class CustomDrawer extends StatelessWidget {
             child: const Padding(
               padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
               child: Text(
-                'Item 1',
+                'Detail',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
@@ -63,23 +63,33 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
-            child: Text(
-              'Item 1',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/profile');
+            },
+            child: const Padding(
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
+              child: Text(
+                'Profile',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
-            child: Text(
-              'Item 1',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
+          GestureDetector(
+             onTap: () {
+              Navigator.pushReplacementNamed(context, '/detail');
+            },
+            child: const Padding(
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
+              child: Text(
+                'Other',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
               ),
             ),
           ),

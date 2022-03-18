@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
-class CarouselImages extends StatefulWidget {
-  const CarouselImages({
+class CarouselImages extends HookWidget {
+  CarouselImages({
     Key? key,
   }) : super(key: key);
-
-  @override
-  _CarouselImagesState createState() => _CarouselImagesState();
-}
-
-class _CarouselImagesState extends State<CarouselImages> {
-  int currentIndex = 0;
 
   List<String> list = [
     'https://images.unsplash.com/photo-1647436929276-43fa809c907c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80',
     'https://images.unsplash.com/photo-1579656592043-a20e25a4aa4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80',
-     'https://images.unsplash.com/photo-1647436929276-43fa809c907c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80',
+    'https://images.unsplash.com/photo-1647436929276-43fa809c907c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80',
   ];
 
   @override
   Widget build(BuildContext context) {
+    ValueNotifier<int> currentIndex = useState(0);
     return SafeArea(
         child: Padding(
       padding: const EdgeInsets.all(15.0),
@@ -40,16 +35,14 @@ class _CarouselImagesState extends State<CarouselImages> {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      setState(() {
-                        currentIndex = index;
-                      });
+                      currentIndex.value = index;
                     },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: currentIndex == index
+                          color: currentIndex.value == index
                               ? Colors.black
                               : Colors.grey,
                         ),
@@ -57,7 +50,7 @@ class _CarouselImagesState extends State<CarouselImages> {
                           child: Text(
                             'Image ${index + 1}',
                             style: TextStyle(
-                              color: currentIndex == index
+                              color: currentIndex.value == index
                                   ? Colors.white
                                   : Colors.black,
                               fontWeight: FontWeight.bold,
@@ -89,7 +82,7 @@ class _CarouselImagesState extends State<CarouselImages> {
                   )
                 ],
                 image: DecorationImage(
-                  image: NetworkImage(list[currentIndex]),
+                  image: NetworkImage(list[currentIndex.value]),
                   fit: BoxFit.cover,
                 ),
                 borderRadius: BorderRadius.circular(

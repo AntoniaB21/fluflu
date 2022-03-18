@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:m2/screens/detail/index.dart';
+import 'package:m2/screens/detail/update.dart';
 import 'package:m2/screens/home.dart';
+import 'package:m2/screens/profile/index.dart';
+import 'package:m2/screens/profile/update.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,14 +11,12 @@ void main() {
 
 final Map<String, Widget Function(BuildContext)> routes = {
   '/home': (context) => const MyHomePage(title: 'Flutter'),
-  '/detail': (context) => Scaffold(
+  '/detail': (context) => const DetailScreen(),
+  '/detail/update': (context) => const UpdateDetailScreen(),
+  '/profile': (context) => const ProfileScreen(),
+  '/profile/update': (context) => const UpdateProfileScreen(),
+  '/other': (context) => Scaffold(
         appBar: AppBar(),
-        body: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('Back'),
-        ),
       ),
 };
 
