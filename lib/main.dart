@@ -5,6 +5,19 @@ void main() {
   runApp(const MyApp());
 }
 
+final Map<String, Widget Function(BuildContext)> routes = {
+  '/home': (context) => const MyHomePage(title: 'Flutter'),
+  '/detail': (context) => Scaffold(
+        appBar: AppBar(),
+        body: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text('Back'),
+        ),
+      ),
+};
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -16,7 +29,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(title: 'Flutter'),
+      routes: routes,
+      initialRoute: '/home',
     );
   }
 }

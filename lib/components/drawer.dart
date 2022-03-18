@@ -22,8 +22,7 @@ class CustomDrawer extends StatelessWidget {
             ),
             height: 150,
             child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 50, horizontal: 25),
+              padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 25),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -49,13 +48,18 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
-            child: Text(
-              'Item 1',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/detail');
+            },
+            child: const Padding(
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
+              child: Text(
+                'Item 1',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
               ),
             ),
           ),
