@@ -8,7 +8,7 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('DetailTest'),
+        title: const Text('Detail'),
         actions: [
           GestureDetector(
             onTap: () {
@@ -25,7 +25,7 @@ class DetailScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.grey,
         selectedItemColor: Colors.white,
         iconSize: 48,
         items: const [
