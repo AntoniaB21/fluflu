@@ -33,10 +33,29 @@ class HomePageShow extends StatelessWidget {
               child: Text('Error'),
             );
           }
+
           if (snapshot.hasData) {
             return ListView.builder(
-              itemBuilder: ();
+              shrinkWrap: true,
+              itemCount: snapshot.data.length,
+              itemBuilder: (BuildContext context, int index){
+              return Row(
+                children: [
+                  Container(
+                    height: 250,
+                    alignment: Alignment.center,
+                    child: Card(
+                      child: Image.network(
+                        snapshot.data[index]["image"]["medium"]
+                      )
+                    )
+                  ),
+                  Container(),
+                ],
+              );
+            });
           }
+          return Center(child: CircularProgressIndicator(),);
         },
       )
     );
