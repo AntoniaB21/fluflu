@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tp/home_animation.dart';
 import 'homepage.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class WelcomePage extends StatelessWidget{
   const WelcomePage({Key? key}) : super(key: key);
@@ -22,8 +20,24 @@ class WelcomePage extends StatelessWidget{
                 HomeAnimation(
                   delay: 2000,
                   child: Container(
-                    child: Image.asset('images/netflix-logo.jpg')),
+                    height: 200,
+                    child: Image.asset('images/tvm-header-logo.png')),
                   ),
+                  HomeAnimation(
+                  delay: 2000,
+                  child: Container(
+                    height: 400,
+                    margin: EdgeInsets.only(
+                      top:30,
+                      bottom: 20,
+                    ),
+                  child: Text(
+                    "Flutter Project from TVMAZE public API",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white.withOpacity(0.8),
+                  ),
+                  ),
+                  ))
               ],
             )
           )
