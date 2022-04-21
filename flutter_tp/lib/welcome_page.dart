@@ -52,7 +52,14 @@ class WelcomePage extends StatelessWidget{
                         shape: const StadiumBorder(),
                         padding: const EdgeInsets.all(13)),
                         child: Text('GET STARTED'),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomePageShow(),
+                        ),
+                      );
+                      },
                       ),
                     ),
                   ),

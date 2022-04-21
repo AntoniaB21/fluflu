@@ -1,10 +1,9 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_tp/show_card.dart';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
-
-
 
 class HomePageShow extends StatelessWidget {
   getShows() async {
@@ -35,36 +34,25 @@ class HomePageShow extends StatelessWidget {
               child: Text('Error'),
             );
           }
-
+          
           if (snapshot.hasData) {
             return ListView.builder(
+              scrollDirection: Axis.horizontal,
               shrinkWrap: true,
               itemCount: snapshot.data.length,
               itemBuilder: (BuildContext context, int index){
-              return Row(
+             return Row(
                 children: [
                   Container(
                     height: 250,
+                    alignment: Alignment.center,
                     child: Card(
                       child: Image.network(
                         snapshot.data[index]["image"]["medium"]
                       )
                     )
                   ),
-                  Container(child: Column(
-                    children: [
-                      Text(
-                        snapshot.data[index]["name"],
-                      ),
-                      Text(
-                        snapshot.data[index]["type"]),
-                      Text(
-                        snapshot.data[index]["premiered"],
-                      ),
-                      Text(snapshot.data[index]["ended"]),
-                      Text(snapshot.data[index]["status"]),
-                    ],
-                  ),),
+                  Container(),
                 ],
               );
             });
@@ -75,3 +63,6 @@ class HomePageShow extends StatelessWidget {
     );
   }
 }
+
+
+// snapshot.data[index]
