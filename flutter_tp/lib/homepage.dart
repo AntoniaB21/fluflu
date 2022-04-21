@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
 
+
+
 class HomePageShow extends StatelessWidget {
   getShows() async {
     var url;
@@ -43,14 +45,26 @@ class HomePageShow extends StatelessWidget {
                 children: [
                   Container(
                     height: 250,
-                    alignment: Alignment.center,
                     child: Card(
                       child: Image.network(
                         snapshot.data[index]["image"]["medium"]
                       )
                     )
                   ),
-                  Container(),
+                  Container(child: Column(
+                    children: [
+                      Text(
+                        snapshot.data[index]["name"],
+                      ),
+                      Text(
+                        snapshot.data[index]["type"]),
+                      Text(
+                        snapshot.data[index]["premiered"],
+                      ),
+                      Text(snapshot.data[index]["ended"]),
+                      Text(snapshot.data[index]["status"]),
+                    ],
+                  ),),
                 ],
               );
             });
