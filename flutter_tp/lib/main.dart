@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tp/home_animation.dart';
+import 'package:flutter_tp/welcome_page.dart';
 import 'homepage.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,14 +22,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        appBar:  AppBar(
-          title: Text('Netflix App'),
-        ),
-        body: Center(
-          child:  HomeAnimation(delay: 2000, child: FlutterLogo(size: 200),),
-        ),
-      ),
-    );
+      home: WelcomePage());
   }
 }
