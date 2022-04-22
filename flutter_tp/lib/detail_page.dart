@@ -13,7 +13,6 @@ class DetailPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
      return Scaffold(
-      backgroundColor: Color.fromARGB(255, 203, 202, 212),
       body: Column(
         children: [
           Stack(
@@ -26,42 +25,48 @@ class DetailPage extends StatelessWidget{
                 )
               ),
 
-              Center(child: Container(
-                margin: EdgeInsets.only(
+              Container(
+                 margin: EdgeInsets.only(
                   top: 400,
                 ),
                 padding: EdgeInsets.only(
-                  top:20,
-                  bottom:20,
-                  right: 20,
-                  left: 20
-                ),
-                color: Colors.blue,
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Text(this.Data["name"]),
-                ),
-              ),),
-
-              Container(
-                 margin: EdgeInsets.only(
-                  top: 450,
-                ),
-                padding: EdgeInsets.only(
-                  top:20,
+                  top: 20,
                   bottom:20,
                   right: 40,
                   left: 40
                 ),
-                color: Colors.grey,
                 child: Text(
                  this.Data["summary"]
                 ),
               )
             ],
           ),
-         
+         Stack(
+           children: [
+             Container(
+               child: Text(
+                 (this.Data["runtime"]).toString(),
+                  style: TextStyle(fontSize: 30, color: Colors.white),
+                ),
+             )
+           ],
+         ),
+
+         Stack(
+           children: [
+              Column(
+                children: [
+                  Icon(Icons.kitchen, color: Colors.green[500]),
+                  Text('Average time'),
+                  Text(
+                    (this.Data["runtime"]).toString()),
+                ],
+              ),
+              
+      ],
+         )
         ],
+        
       ),
       appBar: AppBar(
         backgroundColor: Color(0xff191826),
