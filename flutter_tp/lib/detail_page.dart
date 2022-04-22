@@ -57,9 +57,9 @@ class DetailPage extends StatelessWidget{
               Column(
                 children: [
                   Icon(Icons.kitchen, color: Colors.green[500]),
-                  Text('Average time'),
+                  Text('Genres'),
                   Text(
-                    (this.Data["runtime"]).toString()),
+                    (this.Data["genres"]).toString()),
                 ],
               ),
               
